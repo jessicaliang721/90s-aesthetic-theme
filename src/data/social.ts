@@ -11,3 +11,7 @@ export const socials = [
   { label: 'youtube', icon: YOUTUBE_ICON, href: 'https://youtube.com/@cozyhobbytime', highlightColor: 'pink' },
   { label: 'email', icon: EMAIL_ICON, href: 'mailto:cozyhobbytime@gmail.com', highlightColor: 'yellow' },
 ]
+
+export const getSocial = (label: string) => {
+  return socials.find(s => s.label === label)
+}

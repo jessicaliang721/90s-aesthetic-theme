@@ -199,6 +199,10 @@ body {
   background: rgba(160, 191, 88, 0.25);
   border-radius: 0.35rem;
   padding: 0.125rem 0.35rem;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  display: inline;
 }
 
 /* H1 */

@@ -14,7 +14,7 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
             {/* Back link */}
             <Link
                 to="/work"
-                className="font-handwrite text-sm font-bold text-neon-pink hand-underline hand-underline-pink inline-block mb-8"
+                className="font-handwrite text-md font-bold text-neon-pink hand-underline hand-underline-pink inline-block mb-8"
             >
                 ← back to all projects
             </Link>
@@ -26,7 +26,7 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
 
                     {/* Title with dashes */}
                     <div className="flex items-center justify-center gap-2">
-                        <svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                        <svg width="28" height="56" viewBox="0 0 28 56" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
                             <line x1="10" y1="14" x2="22" y2="22" stroke="#FF2D9B" strokeWidth="2.5" strokeLinecap="round" />
                             <line x1="6" y1="28" x2="22" y2="28" stroke="#FF2D9B" strokeWidth="2.5" strokeLinecap="round" />
                             <line x1="10" y1="42" x2="22" y2="34" stroke="#FF2D9B" strokeWidth="2.5" strokeLinecap="round" />

@@ -35,7 +35,7 @@ export const experience: Experience[] = [
         title: 'Associate Software Engineer',
         startDate: 'May 2019',
         endDate: 'Jan 2024',
-        location: 'Dallas-Fort Worth Metroplex',
+        location: 'Dallas, Texas',
         description:
           'During my time as an associate developer, I focused on creating seamless, intuitive user experiences for our agent application that served customers across our Apple and GM partners. Much of my work involved building reusable UI components and standardizing our micro-frontend architecture so our dev teams could deliver new features quickly and consistently. One of my favorite projects was developing a chronological customer timeline that helped our agents get the full picture of a user\'s journey at a glance, making their day-to-day work much easier and more efficient.',
         skills: ['React', 'Micro-Frontend Architecture', 'UI Components', 'TypeScript'],
@@ -55,13 +55,13 @@ export const experience: Experience[] = [
         location: 'Plano, Texas',
         description:
           'I stepped into this role eager to expand my technical toolkit, quickly picking up Python and AWS to help modernize our data pipelines. I spent my time optimizing how we moved and stored data across the cloud, eventually building a flexible framework that made our loading processes much faster and more reliable. I also led the effort to automate these tasks using Airflow, ensuring our data stayed fresh without constant manual oversight.',
-        skills: ['Python', 'Airflow', 'AWS', 'Data Pipelines', 'ETL'],
+        skills: ['Python', 'Airflow', 'AWS', 'Data Pipelines'],
       },
       {
         title: 'Application Developer',
         startDate: 'May 2017',
         endDate: 'May 2018',
-        location: 'Dallas-Fort Worth Metroplex',
+        location: 'Plano, Texas',
         description:
           'In this role, I had the opportunity to combine my technical and design skills. I focused on reimagining the front-end of one of our internal tools to make it more user-centric. By researching design patterns and using Sketch to prototype new interfaces, I was able to significantly simplify administrative tasks and create a much smoother experience for our users.',
         skills: ['Frontend Development', 'UI/UX Design', 'Sketch', 'Prototyping'],

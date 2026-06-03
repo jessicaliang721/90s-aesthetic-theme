@@ -1,26 +1,28 @@
 interface SocialIconProps {
-  icon: string
+  icon: string | undefined
   label?: string
   href?: string
   highlightColor?: string
   width?: number
   height?: number
+  classNames?: string
 }
 
-export const SocialIcon = ({ icon, label, href, highlightColor, width = 10, height = 10 }: SocialIconProps) => {
+export const SocialIcon = ({ icon, label, href, highlightColor, width, height, classNames }: SocialIconProps) => {
   if (href) {
     return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex flex-col items-center transition-transform hover:scale-[1.1] active:scale-[0.95]"
+      className={`flex flex-col items-center transition-transform hover:scale-[1.1] active:scale-[0.95] ${classNames || ''}`}
     >
-      <div className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12">
+      <div className={`flex items-center justify-center`}>
         <img
           src={icon}
           alt={label}
           className="max-w-full max-h-full object-contain drop-shadow-lg"
+          style={{ width: width ? `${width}px` : '48px', height: height ? `${height}px` : '48px' }}
         />
       </div>
 
@@ -34,11 +36,12 @@ export const SocialIcon = ({ icon, label, href, highlightColor, width = 10, heig
   }
   return (
     <>
-      <div className={`flex items-center justify-center w-${width} h-${height} md:w-${(width + 2) || 12} md:h-${height + 2}`}>
+      <div className={`flex items-center justify-center`}>
         <img
           src={icon}
           alt={label}
           className="max-w-full max-h-full object-contain drop-shadow-lg"
+          style={{ width: width ? `${width}px` : '48px', height: height ? `${height}px` : '48px' }}
         />
       </div>
 

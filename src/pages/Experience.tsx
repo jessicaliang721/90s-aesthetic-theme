@@ -8,6 +8,7 @@ import BLUE_PAPER from '../assets/backgrounds/blue-paper-bg.png'
 import BEADED_TIMELINE from '../assets/beaded-timeline.png'
 import YIN_YANG_BEAD from '../assets/yin-yang-bead.png'
 import { Button } from '../components/Button'
+import { useNavigate } from 'react-router-dom'
 
 const NOTE_PAPERS = [
   YELLOW_NOTE_PAPER,
@@ -23,12 +24,18 @@ export default function Experience() {
     exp.roles.map((role) => ({ ...role, company: exp.company, type: exp.type }))
   )
 
+  const navigate = useNavigate()
+
+  // TODO:
+  // update masking tape to cute tapes
+
+
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <main className="max-w-6xl mx-auto px-6 pb-6">
 
       {/* Page header */}
-      <div className="mb-16 text-center">
-        <h1 className="font-display text-5xl text-ink mb-4">work experience</h1>
+      <div className="mb-12 text-center">
+        <h1 className="header-highlight header-highlight-pink tracking-wider hand-underline hand-underline-green text-3xl mb-8 -rotate-3">work experience</h1>
       </div>
 
       {/* Timeline */}
@@ -48,14 +55,16 @@ export default function Experience() {
         <div className="space-y-12">
           {allRoles.map((role, index) => {
             const bg = NOTE_PAPERS[index % NOTE_PAPERS.length]
+            const startDate = role.startDate.split(' ')[1] ?? role.startDate
+            const endDate = role.endDate === 'Present' ? 'Present' : role.endDate.split(' ')[1] ?? role.endDate
 
             return (
               <div key={`${role.company}-${role.title}`} className="flex flex-col md:flex-row gap-4 md:gap-2 items-start">
 
                 {/* Date column */}
-                <div className="w-full md:w-24 shrink-0 flex md:flex-col items-center justify-center md:items-end md:justify-start gap-1 md:pt-6 md:pr-6">
+                <div className="hidden md:w-24 shrink-0 md:flex md:flex-col items-center justify-center md:items-end md:justify-start gap-1 md:pt-6 md:pr-6">
                   <div
-                    className="flex md:flex-col items-center justify-center px-3 py-2 drop-shadow-sm -rotate-2"
+                    className="flex md:flex-col items-center justify-center px-3 py-2 drop-shadow-sm -rotate-2 tracking-widest"
                     style={{
                       backgroundImage: `url(${bg})`,
                       backgroundSize: '100% 100%',
@@ -65,7 +74,7 @@ export default function Experience() {
                     }}
                   >
                     <span className="font-handwrite text-lg font-bold text-ink/80 leading-tight">
-                      {role.startDate.split(' ')[1] ?? role.startDate}
+                      {startDate}
                     </span>
 
                     {/* Inline dash — mobile only */}
@@ -75,15 +84,11 @@ export default function Experience() {
                     <span className="font-handwrite text-ink/80 text-sm hidden md:block">—</span>
 
                     <span className="font-handwrite text-lg font-bold text-ink/80 leading-tight">
-                      {role.endDate === 'Present' ? 'Present' : role.endDate.split(' ')[1] ?? role.endDate}
+                      {endDate}
                     </span>
                   </div>
                 </div>
 
-                {/* Star on timeline */}
-                {/* <div className="hidden md:flex w-4 flex-shrink-0 items-start justify-center pt-6">
-                  <span className="text-neon-pink text-lg z-10 relative">★</span>
-                </div> */}
                 {/* Yin yang bead on timeline */}
                 <div className="hidden md:block w-12 shrink-0 relative pt-6">
                   <img
@@ -106,7 +111,7 @@ export default function Experience() {
                   />
 
                   <div
-                    className="pt-8 pb-6 px-6 drop-shadow-md"
+                    className="p-10 drop-shadow-md"
                     style={{
                       backgroundImage: `url(${bg})`,
                       backgroundSize: '100% 100%',
@@ -123,6 +128,8 @@ export default function Experience() {
                       <span>{role.company}</span>
                       <span className="text-neon-pink"> ★</span>
                       <span>{role.location}</span>
+                      <span className="text-neon-pink md:hidden"> ★</span>
+                      <span className='md:hidden'>{startDate} - {endDate} </span>
                     </p>
 
                     {/* Description */}
@@ -149,7 +156,9 @@ export default function Experience() {
       </div>
 
       {/* Button */}
-      <Button label='view all projects →' />
+      <div className="flex justify-center mt-8">
+        <Button label='view all projects →' onClick={() => navigate('/work')} />
+      </div>
     </main>
   )
 }
