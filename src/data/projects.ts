@@ -18,7 +18,7 @@ export const projects: Project[] = [
     \n\n
     Extended the application into a unified operations platform by integrating real-time customer chat application, fraud management, and case management tools. Focused on building scalable, maintainable UI architecture to support a growing set of tenants and microapps within a single interface.
     `,
-    techStack: ["React", "React Query", "Redux", "WebPack", "Sass"],
+    techStack: ["React", "React Query", "React Testing Library", "Redux", "Webpack", "Sass", "Figma", "Storybook"],
     highlights: [
       "Reduced agent context switching", 
       "Improved agent workflow efficiency", 

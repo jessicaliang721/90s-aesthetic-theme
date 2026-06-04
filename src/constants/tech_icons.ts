@@ -55,6 +55,10 @@ export const TECH_ICONS: Record<
         icon: getIcon(SimpleIcons.siFigma),
         color: `#${SimpleIcons.siFigma.hex}`,
     },
+    Jest: {
+        icon: getIcon(SimpleIcons.siJest),
+        color: `#${SimpleIcons.siJest.hex}`,
+    },
     Sass: {
         icon: getIcon(SimpleIcons.siSass),
         color: `#${SimpleIcons.siSass.hex}`,
@@ -76,8 +80,16 @@ export const TECH_ICONS: Record<
         icon: getIcon(SimpleIcons.siReactquery),
         color: `#FF4154`, // not in Simple Icons color set consistently
     },
+    "React Testing Library": {
+        icon: getIcon(SimpleIcons.siTestinglibrary),
+        color: `#${SimpleIcons.siTestinglibrary.hex}`,
+    },
     Storybook: {
         icon: getIcon(SimpleIcons.siStorybook),
         color: `#${SimpleIcons.siStorybook.hex}`,
+    },
+    Webpack: {
+        icon: getIcon(SimpleIcons.siWebpack),
+        color: `#${SimpleIcons.siWebpack.hex}`,
     },
 };

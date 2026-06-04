@@ -1,4 +1,4 @@
 {
-  "longDescription": "This project was built for...",
-  "highlights": ["Increased bookings by 28%"]
+  "longDescription": "A nostalgic 90's-themed portfolio website where I showcase projects I've built throughout my career as a Front-End Developer. Inspired by the colorful, playful aesthetics that defined my childhood, this project is both a professional portfolio and a creative expression of the things that bring me joy. Built as a learning project to deepen my experience with Tailwind CSS and TypeScript, it combines modern web development practices with a retro internet vibe.",
+  "highlights": ["YouTube API Integration", "GitHub API Integration", "Custom Component Library"]
 }
