@@ -9,7 +9,7 @@ export interface Project {
   description: string
   longDescription?: string
   href?: string
-  screenshots?: Screenshot
+  screenshots?: Record<string, string>
   category: string
   slug: string
   date: string

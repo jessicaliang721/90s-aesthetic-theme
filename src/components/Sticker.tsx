@@ -3,7 +3,8 @@ type StickerProps = {
     altText?: string;
     customClasses?: string;
     animationDelay?: number;
-    float?: boolean; // if true, won't apply floating animation
+    float?: boolean;
+    wiggle?: boolean;
 };
 
 const Sticker = ({
@@ -11,14 +12,15 @@ const Sticker = ({
     altText = "",
     customClasses,
     animationDelay = 1,
-    float = false
+    float = false,
+    wiggle = false
 }: StickerProps) => {
     return (
         <img
             aria-hidden="true"
             src={imageSrc}
             alt={altText}
-            className={`drop-shadow-lg ${float ? 'sticker-float' : ''} ${customClasses}`}
+            className={`drop-shadow-lg ${float ? 'sticker-float' : ''} ${wiggle ? 'sticker-wiggle' : ''} ${customClasses}`}
             style={
                 animationDelay !== undefined
                     ? { animationDelay: `${animationDelay}s` }

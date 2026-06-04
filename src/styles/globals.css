@@ -130,7 +130,7 @@ body {
   z-index: 10;
 }
 
-/* Sticker bounce */
+/* Sticker float */
 @keyframes float {
 
   0%,
@@ -145,6 +145,33 @@ body {
 
 .sticker-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Sticker wiggle */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(var(--r, 0deg));
+  }
+  15% {
+    transform: rotate(calc(var(--r, 0deg) - 2deg));
+  }
+  30% {
+    transform: rotate(calc(var(--r, 0deg) + 1deg));
+  }
+  45% {
+    transform: rotate(calc(var(--r, 0deg) - 1deg));
+  }
+  60% {
+    transform: rotate(calc(var(--r, 0deg) + 2deg));
+  }
+  75% {
+    transform: rotate(calc(var(--r, 0deg) - 1deg));
+  }
+}
+
+.sticker-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
 }
 
 /* Handwritten underline squiggle */
@@ -357,7 +384,7 @@ body {
   }
 
   .filter-bar-bg {
-    background-image: url('/src/assets/backgrounds/pink-washi-flowers.png');
+    background-image: url('/src/assets/doodles-stickers/pink-washi-flowers.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height: 40px;

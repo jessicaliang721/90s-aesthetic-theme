@@ -9,7 +9,6 @@ export const FilterBar = ({ active, onChange }: FilterBarProps) => {
     return (
         <div
             className="flex items-center justify-center gap-3 px-4 py-1 flex-wrap filter-bar-bg mb-6"
-
         >
             {projectFilters.map((filter, index) => (
                 <div key={filter} className="flex items-center gap-3 shrink-0">

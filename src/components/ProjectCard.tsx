@@ -24,7 +24,7 @@ export default function ProjectCard({
     screenshot,
     index
 }: ProjectCardProps) {
-    const bgs = [PINK_NOTE_PAPER, YELLOW_NOTE_PAPER, GREEN_NOTE_PAPER, PURPLE_NOTE_PAPER]
+    const bgs = [PURPLE_NOTE_PAPER, YELLOW_NOTE_PAPER, GREEN_NOTE_PAPER, PINK_NOTE_PAPER]
     const bg = bgs[index % bgs.length]
 
     return (

@@ -57,7 +57,6 @@ export default function Home() {
           <h2 className="header-highlight header-highlight-pink tracking-wider hand-underline hand-underline-yellow text-3xl mb-6 rotate-2">featured work</h2>
         </div>
 
-        {/* TODO: add only featured projects on home page */}
         <ProjectsGrid projects={featuredProjects} loading={loading} error={error} />
 
         <div className="flex justify-center my-4">
@@ -70,7 +69,7 @@ export default function Home() {
         src={PURPLE_WASHI}
         alt=""
         aria-hidden="true"
-        className="lg:w-10/12 rotate-[0.5deg] my-10 mx-auto drop-shadow-lg"
+        className="lg:w-10/12 rotate-[0.5deg] my-10 mx-auto drop-shadow-lg md:mb-0"
       />
 
       {/* ── Socials Section ────────────────────────────────── */}

@@ -14,7 +14,7 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
             {/* Back link */}
             <Link
                 to="/work"
-                className="font-handwrite text-md font-bold text-neon-pink hand-underline hand-underline-pink inline-block mb-8"
+                className="font-handwrite text-md font-bold text-neon-pink hand-underline hand-underline-pink hand-underline-link inline-block mb-8"
             >
                 ← back to all projects
             </Link>
@@ -98,7 +98,7 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
                                 ? <img
                                     src={screenshots.desktop}
                                     alt={`${title} desktop screenshot`}
-                                    className="w-full object-cover object-top max-h-87.5"
+                                    className="w-full object-cover object-top"
                                 />
                                 : <div
                                     className="w-full flex items-center justify-center bg-retro-pink/20 max-h-87.5"

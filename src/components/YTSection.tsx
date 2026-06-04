@@ -15,7 +15,7 @@ export const YTSection = () => {
     return (
         <section
             id="youtube"
-            className="p-10 relative drop-shadow-lg layered-paper-bg my-10"
+            className="p-10 relative drop-shadow-lg layered-paper-bg my-10 md:mb-0"
         >
             {loading && (
                 <p className="font-handwrite text-ink/50 text-center py-8">
@@ -41,7 +41,7 @@ export const YTSection = () => {
 
                         <p className="font-mono text-lg tracking-tighter leading-relaxed">{channel?.description}</p>
 
-                        <h3 className="tracking-wider text-xl squiggle squiggle-pink inline-block">my latest video</h3>
+                        <h3 className="tracking-wider text-xl squiggle squiggle-green inline-block">my latest video</h3>
                         <p className="font-body text-md text-ink/70 leading-relaxed line-clamp-4">
                             {video.description}
                         </p>

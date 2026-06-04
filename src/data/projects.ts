@@ -1,26 +1,29 @@
 import PLACEHOLDER_SCREENSHOT from '../assets/placeholder-ss.png'
+import AUI_SCREENSHOT from '../assets/projects/aui-dashboard.png'
 import type { Project } from '../types/project'
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'good energy club',
-    slug: 'good-energy-club',
-    description: 'E-commerce landing page for a lifestyle brand.',
-    category: 'e-commerce',
+    title: 'Agent UI',
+    slug: 'agent-ui',
+    description: 'UI agents use to service credit card and savings customers.',
+    category: 'web apps',
     screenshots: {
-      desktop: PLACEHOLDER_SCREENSHOT,
-      mobile: PLACEHOLDER_SCREENSHOT
+      desktop: AUI_SCREENSHOT,
     },
-    href: 'https://goodenergyclub.com',
-    date: 'Oct 2024',
+    date: 'May 2019',
     featured: true,
-    longDescription: `
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec aliquet mi.</p>
-      <p>Etiam id tortor et neque venenatis pulvinar. Maecenas tristique pulvinar sagittis.</p>
+    longDescription: `Built a complex, production-grade Agent UI supporting customer servicing for credit card and savings products. Implemented key workflows including account management, transaction and dispute flows, document/file upload, and customer preference updates.
+    \n\n
+    Extended the application into a unified operations platform by integrating real-time customer chat application, fraud management, and case management tools. Focused on building scalable, maintainable UI architecture to support a growing set of tenants and microapps within a single interface.
     `,
-    techStack: ["JavaScript", "TypeScript", "CSS", "React"],
-    impact: ["lowered cost", "improved customer happiness", "reduced maintenance"]
+    techStack: ["React", "React Query", "Redux"],
+    impact: [
+      "Reduced agent context switching", 
+      "Improved agent workflow efficiency", 
+      "Faster and more consistent customer issue resolution"
+    ]
   },
 
   {
@@ -31,6 +34,7 @@ export const projects: Project[] = [
     category: 'landing pages',
     screenshots: {
       desktop: PLACEHOLDER_SCREENSHOT,
+      mobile: PLACEHOLDER_SCREENSHOT,
     },
     href: '#',
     date: 'Nov 2024',

@@ -14,9 +14,9 @@ interface PhotoSectionProps {
 
 export default function PhotoSection({ bgUrl = BG_IMG, photoUrl, caption, rotation = -10, sticker1, sticker2 }: PhotoSectionProps) {
     return (
-        <div 
-        className='relative w-fit py-8'
-        style={{ transform: `rotate(${rotation}deg)`}}
+        <div
+            className='relative w-fit py-8'
+            style={{ transform: `rotate(${rotation}deg)` }}
         >
             {/* Yellow paper — rendered first so it sits behind everything */}
             <div className="absolute top-5 -left-5 w-75 h-110 -z-10 drop-shadow-lg" style={{ backgroundImage: `url(${bgUrl})` }} />
@@ -42,6 +42,13 @@ export default function PhotoSection({ bgUrl = BG_IMG, photoUrl, caption, rotati
                 {sticker1}
                 {sticker2}
             </div>
+
+            <div className=" md:inline-block">
+                <span className="absolute top-30 -right-16 text-retro-lilac text-5xl opacity-70 rotate-15">✦</span>
+                <span className="absolute text-6xl -bottom-15 right-15 text-neon-yellow opacity-60 rotate-10">♡</span>
+                <span className="absolute text-4xl top-60 -left-13 text-neon-pink opacity-60 -rotate-5">☆</span>
+            </div>
+
         </div>
     )
 }

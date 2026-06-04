@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom'
 import { useProjects } from '../hooks/useProjects'
 import { ProjectHero } from '../components/ProjectHero'
 import { ContentCard } from './ContentCard'
+import { toHtmlParagraphs } from '../utils/toParagraphs'
+import { ScreenshotSection } from './ScreenshotSection'
 
 export default function ProjectDetail() {
     const { slug } = useParams()
@@ -49,7 +51,7 @@ export default function ProjectDetail() {
                 <ContentCard title="about the project" bgColor="#feefee">
                     <div
                         className="prose prose-sm font-body text-lg text-ink mt-8 whitespace-normal wrap-anywhere max-w-none"
-                        dangerouslySetInnerHTML={{ __html: longDescription }}
+                        dangerouslySetInnerHTML={{ __html: toHtmlParagraphs(longDescription) }}
                     />
                 </ContentCard>
             )}
@@ -107,27 +109,10 @@ export default function ProjectDetail() {
 
             {/* Screenshot section */}
             {project.screenshots && Object.keys(project.screenshots).length > 0 && (
-                <ContentCard title="screenshots 📷" bgColor="#f4ebf8">
-                    <div className={`grid grid-cols-1 md:grid-cols-${Object.keys(project.screenshots).length} gap-4`}>
-                        {Object.entries(project.screenshots).map(([label, url]) => (
-                            <div key={label} className="flex flex-col items-center gap-2 max-w-2xl">
-                                <a
-                                    href={url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="block w-full rounded-lg overflow-hidden border-2 border-ink drop-shadow-md transition-transform hover:scale-[1.02] hover:-rotate-1"
-                                >
-                                    <img
-                                        src={url}
-                                        alt={`${project.title} ${label} screenshot`}
-                                        className="w-full object-cover object-top"
-                                    />
-                                </a>
-                                <span className="font-handwrite text-lg tracking-wider font-extrabold text-ink/60">{label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </ContentCard>
+                <ScreenshotSection
+                    title={project.title}
+                    screenshots={project.screenshots}
+                />
             )}
 
         </main >

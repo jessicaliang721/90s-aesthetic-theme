@@ -32,7 +32,7 @@ export default function Navigation() {
                         {mobileOpen ? '✕' : '☰'}
                     </button>
                     <Logo customClasses="absolute left-1/2 -translate-x-1/2 z-50" onClick={() => setMobileOpen(false)} />
-                    <Sticker imageSrc={GREEN_STAR_STICKER} float={false} customClasses="drop-shadow-lg w-15 z-50 pr-3"/>
+                    <Sticker imageSrc={GREEN_STAR_STICKER} float={true} customClasses="drop-shadow-lg w-15 z-50 pr-3"/>
                 </div>
 
                 {/* Mobile nav — hidden on md and up */}
