@@ -17,5 +17,5 @@ export interface Project {
   mobileScreenshot?: string
   githubHref?: string
   techStack?: string[]
-  impact?: string[]
+  highlights?: string[]
 }

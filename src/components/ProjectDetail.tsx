@@ -4,6 +4,7 @@ import { ProjectHero } from '../components/ProjectHero'
 import { ContentCard } from './ContentCard'
 import { toHtmlParagraphs } from '../utils/toParagraphs'
 import { ScreenshotSection } from './ScreenshotSection'
+import { TECH_ICONS } from '../constants/tech_icons'
 
 export default function ProjectDetail() {
     const { slug } = useParams()
@@ -23,23 +24,7 @@ export default function ProjectDetail() {
         </main>
     )
 
-    const { longDescription, techStack, impact } = project;
-
-    const TECH_ICONS: Record<string, { icon: string; color: string }> = {
-        'HTML5': { icon: '🌐', color: '#E34F26' },
-        'CSS3': { icon: '🎨', color: '#1572B6' },
-        'JavaScript': { icon: '𝙅𝙎', color: '#F7DF1E' },
-        'TypeScript': { icon: '𝙏𝙎', color: '#3178C6' },
-        'React': { icon: '⚛️', color: '#61DAFB' },
-        'Tailwind CSS': { icon: '💨', color: '#06B6D4' },
-        'Framer Motion': { icon: '🟣', color: '#BB4FFF' },
-        'Next.js': { icon: '▲', color: '#000000' },
-        'Netlify': { icon: '🌿', color: '#00C7B7' },
-        'GitHub': { icon: '🐙', color: '#181717' },
-        'Figma': { icon: '🎭', color: '#F24E1E' },
-        'Sass': { icon: '💅', color: '#CC6699' },
-        'Node.js': { icon: '🟢', color: '#339933' },
-    }
+    const { longDescription, techStack, highlights: impact } = project;
 
     return (
         <main className="px-6">
@@ -62,7 +47,7 @@ export default function ProjectDetail() {
                     {/* Impact */}
                     <div className="lg:w-1/2 space-y-4">
                         <h2 className="font-display text-3xl text-ink flex items-center gap-3">
-                            impact <span className="text-xl">💻</span>
+                            highlights <span className="text-xl">💻</span>
                         </h2>
 
                         <ul className="space-y-3">
@@ -93,11 +78,19 @@ export default function ProjectDetail() {
                                 return (
                                     <div
                                         key={tech}
-                                        className="flex items-center gap-2 px-3 py-2 border-2 rounded-lg bg-paper"
-                                        style={{ borderColor: meta?.color ?? '#FFB3D9' }}
+                                        className="flex items-center gap-2 px-3 py-2 border-2 rounded-lg bg-paper transition-all"
+                                        style={{
+                                            borderColor: meta?.color ?? "#FFB3D9",
+                                            color: meta?.color ?? "#FFB3D9"
+                                        }}
                                     >
-                                        <span className="text-base leading-none">{meta?.icon ?? '🔧'}</span>
-                                        <span className="font-mono text-lg text-ink">{tech}</span>
+                                        <span className="text-base leading-none">
+                                            {meta?.icon ?? "🔧"}
+                                        </span>
+
+                                        <span className="font-mono text-lg text-ink">
+                                            {tech}
+                                        </span>
                                     </div>
                                 )
                             })}

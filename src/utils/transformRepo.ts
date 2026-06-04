@@ -5,7 +5,8 @@ import type { Project } from '../types/project'
 export function transformRepo(
     repo: GitHubRepo,
     languages: Record<string, number>,
-    readme: string | null
+    longDescription: string | null,
+    highlights: string[] | null
 ): Project {
     const topics = repo.topics ?? []
 
@@ -28,7 +29,8 @@ export function transformRepo(
         slug: repo.name,
         title: repo.name.replace(/-/g, ' '),
         description: repo.description,
-        longDescription: readme ?? undefined,
+        longDescription: longDescription ?? undefined,
+        highlights: highlights ?? undefined,
         githubHref: repo.html_url,
         screenshots: { desktop: screenshot },
         category: categories[0] ?? 'other',

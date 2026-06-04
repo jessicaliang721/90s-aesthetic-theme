@@ -8,9 +8,8 @@ import { useGitHubRepos } from './useGitHubRepos'
 
 import { fetchRepoLanguages } from '../api/fetchRepoLanguages'
 
-import { fetchReadme } from '../api/fetchReadMe'
-
 import type { Project } from '../types/project'
+import { fetchPortfolioJSON } from '../api/fetchPortfolioJSON'
 
 export function useProjects() {
   const { repos, loading: reposLoading, error } = useGitHubRepos()
@@ -29,16 +28,17 @@ export function useProjects() {
       const projects = await Promise.all(
         repos.map(async (repo) => {
           // fetch languages and readme in parallel per repo
-          const [languages, readme] = await Promise.all([
+          const [languages, json] = await Promise.all([
             fetchRepoLanguages(repo.name),
-            fetchReadme(repo.name),
+            fetchPortfolioJSON(repo.name)
           ])
 
-          return transformRepo(repo, languages, readme)
+          console.log('languages', languages)
+          console.log('json', json)
+
+          return transformRepo(repo, languages, json?.longDescription, json?.highlights)
         })
       )
-
-      console.log('projects', projects)
 
       setGithubProjects(projects)
       setLoadingProjects(false)
