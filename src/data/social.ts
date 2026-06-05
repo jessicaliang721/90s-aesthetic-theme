@@ -1,8 +1,8 @@
-import INSTAGRAM_ICON from '../assets/socials/instagram-icon.png'
-import GITHUB_ICON from '../assets/socials/github-icon.png'
-import LINKEDIN_ICON from '../assets/socials/linkedin-icon.png'
-import YOUTUBE_ICON from '../assets/socials/youtube-icon.png'
-import EMAIL_ICON from '../assets/socials/email-icon.png'
+import INSTAGRAM_ICON from '../assets/icons/instagram-icon.png'
+import GITHUB_ICON from '../assets/icons/github-icon.png'
+import LINKEDIN_ICON from '../assets/icons/linkedin-icon.png'
+import YOUTUBE_ICON from '../assets/icons/youtube-icon.png'
+import EMAIL_ICON from '../assets/icons/email-icon.png'
 
 export const socials = [
   { label: 'instagram', icon: INSTAGRAM_ICON, href: 'https://instagram.com/cozyhobbytime', highlightColor: 'pink' },

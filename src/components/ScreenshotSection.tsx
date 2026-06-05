@@ -11,7 +11,8 @@ export const ScreenshotSection = ({
 }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    const images = Object.entries(screenshots).map(([label, url]) => ({
+    const images = Object.entries(screenshots)
+    .map(([label, url]) => ({
         label,
         url,
     }));
@@ -22,11 +23,14 @@ export const ScreenshotSection = ({
             activeIndex !== null ? "hidden" : "auto";
     }, [activeIndex]);
 
+    const colCount = Math.min(images.length, 3)
+
     return (
         <>
             <ContentCard title="screenshots 📷" bgColor="#f4ebf8">
                 <div
-                    className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4`}
+                    className={`grid grid-cols-1 gap-4`}
+                    style={{ gridTemplateColumns: `repeat(${colCount}, minmax(0, 1fr))` }}
                 >
                     {images.map((img, i) => (
                         <div

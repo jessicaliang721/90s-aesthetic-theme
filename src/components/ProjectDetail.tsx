@@ -24,7 +24,10 @@ export default function ProjectDetail() {
         </main>
     )
 
-    const { longDescription, techStack, highlights: impact } = project;
+    const { longDescription, techStack, highlights, screenshots } = project;
+
+    const nonFeaturedScreenshots = screenshots ? Object.fromEntries(Object.entries(screenshots).filter(([key]) => key !== 'featured'))
+        : null
 
     return (
         <main className="px-6">
@@ -51,7 +54,7 @@ export default function ProjectDetail() {
                         </h2>
 
                         <ul className="space-y-3">
-                            {impact?.map((item, i) => (
+                            {highlights?.map((item, i) => (
                                 <li key={i} className="font-mono font-bold text-lg text-ink/80 flex items-start gap-3">
                                     <span className="shrink-0 w-5 h-5 rounded-full border-2 border-retro-green flex items-center justify-center mt-0.5">
                                         <span className="text-retro-green text-md">✓</span>
@@ -101,10 +104,10 @@ export default function ProjectDetail() {
             </ContentCard>
 
             {/* Screenshot section */}
-            {project.screenshots && Object.keys(project.screenshots).length > 0 && (
+            {nonFeaturedScreenshots && Object.keys(nonFeaturedScreenshots).length > 0 && (
                 <ScreenshotSection
                     title={project.title}
-                    screenshots={project.screenshots}
+                    screenshots={nonFeaturedScreenshots}
                 />
             )}
 

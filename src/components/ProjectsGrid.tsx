@@ -19,7 +19,7 @@ export const ProjectsGrid = ({ projects, loading, error }: ProjectsGridProps) =>
                         index={index}
                         slug={project.slug}
                         title={project.title}
-                        screenshot={project.screenshots?.desktop}
+                        screenshot={project.screenshots?.featured}
                         description={project.description}
                     />
                 )

@@ -92,4 +92,24 @@ export const TECH_ICONS: Record<
         icon: getIcon(SimpleIcons.siWebpack),
         color: `#${SimpleIcons.siWebpack.hex}`,
     },
+    Python: {
+        icon: getIcon(SimpleIcons.siPython),
+        color: `#${SimpleIcons.siPython.hex}`,
+    },
+    Airflow: {
+        icon: getIcon(SimpleIcons.siApacheairflow),
+        color: `#${SimpleIcons.siApacheairflow.hex}`,
+    },
+    PHP: {
+        icon: getIcon(SimpleIcons.siPhp),
+        color: `#${SimpleIcons.siPhp.hex}`,
+    },
+    WordPress: {
+        icon: getIcon(SimpleIcons.siWordpress),
+        color: `#${SimpleIcons.siWordpress.hex}`,
+    },
+    jQuery: {
+        icon: getIcon(SimpleIcons.siJquery),
+        color: `#${SimpleIcons.siJquery.hex}`,
+    },
 };
