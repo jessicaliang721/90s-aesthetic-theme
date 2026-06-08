@@ -1,17 +1,12 @@
 import Sticker from '../components/Sticker'
 import { SocialIcon } from '../components/SocialIcon'
-import { socials, getSocial } from '../data/social'
+import { getSocial } from '../data/social'
 
-import PINK_WASHI_FLOWERS from '../assets/doodles-stickers/pink-washi-long.png'
 import PURPLE_WASHI from '../assets/doodles-stickers/purple-washi-tape.png'
 import PURPLE_NOTE_PAPER from '../assets/backgrounds/purple-note-paper.png'
 import GREEN_NOTE_PAPER from '../assets/backgrounds/green-note-paper.png'
 import GREEN_SMILEY from '../assets/doodles-stickers/green-smiley-sticker.png'
-import PINK_STAR_DOODLE from '../assets/doodles-stickers/pink-star-doodle.png'
-import MASKING_TAPE from '../assets/doodles-stickers/masking-tape.png'
 import GREEN_STAR_DOODLE from '../assets/doodles-stickers/green-star-doodle.png'
-import LINKEDIN_ICON from '../assets/socials/linkedin-icon.png'
-import EMAIL_ICON from '../assets/socials/email-icon.png'
 import PINK_HEART_DOODLE from '../assets/doodles-stickers/pink-heart-doodle-unfilled.png'
 import PhotoSection from '../components/PhotoSection'
 import { CTASection } from '../components/CTASection'
@@ -94,7 +89,7 @@ export default function Contact() {
                 <h3 className='text-center text-2xl mb-2'>🖥️ software engineering roles</h3>
                 <SocialIcon icon={getSocial('linkedin')?.icon} width={60} height={60} />
                 <p className="leading-8">
-                  If you're reaching out about <span className="squiggle squiggle-pink font-semibold">Front-End Developer</span>, <span className="squiggle squiggle-pink font-semibold">Platform Engineer</span>, or <span className="squiggle squiggle-pink font-semibold">UI/UX Developer</span> opportunities, please send me a message on LinkedIn. I'd be happy to connect and discuss how I can contribute to your team or project.
+                  If you're reaching out about <span className="squiggle squiggle-yellow font-semibold">Front-End Developer</span>, <span className="squiggle squiggle-yellow font-semibold">Platform Engineer</span>, or <span className="squiggle squiggle-yellow font-semibold">UI/UX Developer</span> opportunities, please send me a message on LinkedIn. I'd be happy to connect and discuss how I can contribute to your team or project.
                 </p>
                 <div className="text-center">
                   <Button label="message me" href={getSocial('linkedin')?.href} />

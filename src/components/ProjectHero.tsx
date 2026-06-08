@@ -24,8 +24,8 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
             <div className="flex flex-col lg:flex-row items-center gap-8">
                 {/* Left */}
                 <div className={`space-y-6 relative z-10 -rotate-3 ${(screenshots?.desktop || screenshots?.mobile)
-                        ? 'lg:w-2/5'
-                        : 'w-full'
+                    ? 'lg:w-2/5'
+                    : 'w-full'
                     }`}>
 
                     {/* Title with dashes */}
@@ -105,7 +105,7 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
                                     ? <img
                                         src={screenshots.desktop}
                                         alt={`${title} desktop screenshot`}
-                                        className="w-full object-cover object-top"
+                                        className="w-full aspect-[16/9] object-cover object-top"
                                     />
                                     : <div
                                         className="w-full flex items-center justify-center bg-retro-pink/20 max-h-87.5"
@@ -118,16 +118,23 @@ export const ProjectHero = ({ project }: ProjectHeroProps) => {
 
                         {/* Mobile mockup */}
                         {screenshots?.mobile && (
-                            <div className="absolute -bottom-4 -right-2 w-24 border-2 border-ink rounded-xl overflow-hidden bg-white rotate-3 drop-shadow-lg">
-                                <div className="bg-ink h-3 flex items-center justify-center">
-                                    <div className="w-8 h-1.5 bg-ink/60 rounded-full" />
+                            <div className="hidden md:block absolute -bottom-6 -right-4 w-38 xl:w-44 rotate-3 drop-shadow-lg">
+                                {/* phone frame */}
+                                <div className="border-2 border-ink rounded-4xl overflow-hidden bg-white aspect-9/19.5">
+                                    {/* notch / top bar */}
+                                    <div className="bg-ink h-4 flex items-center justify-center">
+                                        <div className="w-10 h-1.5 bg-ink/60 rounded-full" />
+                                    </div>
+
+                                    {/* screen */}
+                                    <div className="w-full h-full">
+                                        <img
+                                            src={screenshots.mobile}
+                                            alt={`${title} mobile screenshot`}
+                                            className="w-full h-full object-cover object-top"
+                                        />
+                                    </div>
                                 </div>
-                                <img
-                                    src={screenshots.mobile}
-                                    alt={`${title} mobile screenshot`}
-                                    className="w-full object-cover object-top"
-                                    style={{ maxHeight: '200px' }}
-                                />
                             </div>
                         )}
                     </div>

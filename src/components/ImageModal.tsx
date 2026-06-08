@@ -101,7 +101,7 @@ export const ImageModal = ({
                                 e.stopPropagation();
                                 setActiveIndex(
                                     (activeIndex - 1 + images.length) %
-                                        images.length
+                                    images.length
                                 );
                             }}
                             className="absolute left-4 text-white text-4xl transition-opacity opacity-100 hover:opacity-70"
@@ -140,20 +140,18 @@ export const ImageModal = ({
                             damping: 20,
                         }}
                     >
+                        <p className="text-white/60 text-sm mt-2">
+                            {hasMultipleImages
+                                ? "Use ← → or swipe to navigate"
+                                : "Click outside or press ESC to close"}
+                        </p>
                         <img
                             src={activeImage.url}
                             alt={activeImage.label}
                             className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
                         />
-
                         <p className="text-center text-white mt-3 font-handwrite text-xl">
                             {activeImage.label}
-                        </p>
-
-                        <p className="text-white/60 text-sm mt-2">
-                            {hasMultipleImages
-                                ? "Use ← → or swipe to navigate"
-                                : "Click outside or press ESC to close"}
                         </p>
                     </motion.div>
                 </motion.div>

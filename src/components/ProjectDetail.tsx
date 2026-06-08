@@ -44,33 +44,38 @@ export default function ProjectDetail() {
                 </ContentCard>
             )}
 
-            {/* Impact & Tech Stack */}
+            {/* Highlights & Tech Stack */}
             <ContentCard bgColor='#f2f1df'>
                 <div className="flex flex-col lg:flex-row gap-10">
-                    {/* Impact */}
-                    <div className="lg:w-1/2 space-y-4">
-                        <h2 className="font-display text-3xl text-ink flex items-center gap-3">
-                            highlights <span className="text-xl">💻</span>
-                        </h2>
+                    {/* Highlights */}
+                    {highlights && (
+                        <>
+                            <div className="lg:w-1/2 space-y-4">
+                                <h2 className="font-display text-3xl text-ink flex items-center gap-3">
+                                    highlights <span className="text-xl">💻</span>
+                                </h2>
 
-                        <ul className="space-y-3">
-                            {highlights?.map((item, i) => (
-                                <li key={i} className="font-mono font-bold text-lg text-ink/80 flex items-start gap-3">
-                                    <span className="shrink-0 w-5 h-5 rounded-full border-2 border-retro-green flex items-center justify-center mt-0.5">
-                                        <span className="text-retro-green text-md">✓</span>
-                                    </span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                                <ul className="space-y-3">
+                                    {highlights?.map((item, i) => (
+                                        <li key={i} className="font-mono font-bold text-lg text-ink/80 flex items-start gap-3">
+                                            <span className="shrink-0 w-5 h-5 rounded-full border-2 border-retro-green flex items-center justify-center mt-0.5">
+                                                <span className="text-retro-green text-md">✓</span>
+                                            </span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                    {/* Divider — vertical on lg, horizontal on mobile */}
-                    <div className="hidden lg:block w-px bg-ink/10 self-stretch" />
-                    <div className="block lg:hidden h-px bg-ink/10 w-full" />
+                            <div className="hidden lg:block w-px bg-ink/10 self-stretch" />
+                            <div className="block lg:hidden h-px bg-ink/10 w-full" />
+                        </>
+
+                    )}
+
 
                     {/* Tech stack */}
-                    <div className="lg:w-1/2 space-y-4">
+                    <div className={`${highlights ? 'lg:w-1/2' : 'w-full'} space-y-4`}>
                         <h2 className="font-display text-3xl text-ink flex items-center gap-3">
                             tech stack <span className="font-mono text-xl">&lt;/&gt;</span>
                         </h2>
