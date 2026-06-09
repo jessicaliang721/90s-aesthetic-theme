@@ -14,7 +14,7 @@ function App() {
     <div className="container grid">
       <div className="content-wrapper">
         <div className="content-body">
-          <BrowserRouter basename="/90s-aesthetic-theme">
+          <BrowserRouter basename="/">
             <Navigation />
             <Routes>
               <Route path="/" element={<Home />} />
