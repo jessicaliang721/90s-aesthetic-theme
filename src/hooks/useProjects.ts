@@ -10,10 +10,10 @@ import { fetchRepoLanguages } from '../api/fetchRepoLanguages'
 
 import type { Project } from '../types/project'
 import { fetchPortfolioJSON } from '../api/fetchPortfolioJSON'
+import { parseDate } from '../utils/parseDate'
 
 export function useProjects() {
   const { repos, loading: reposLoading, error } = useGitHubRepos()
-  console.log('repos', repos)
 
   const [githubProjects, setGithubProjects] = useState<Project[]>([])
   const [loadingProjects, setLoadingProjects] = useState(true)
@@ -33,9 +33,6 @@ export function useProjects() {
             fetchPortfolioJSON(repo.name)
           ])
 
-          console.log('languages', languages)
-          console.log('json', json)
-
           return transformRepo(repo, languages, json?.longDescription, json?.highlights)
         })
       )
@@ -50,8 +47,7 @@ export function useProjects() {
   const projects = useMemo(() => {
     return [...customProjects, ...githubProjects].sort(
       (a, b) =>
-        new Date(b.date).getTime() -
-        new Date(a.date).getTime()
+        parseDate(b.date) - parseDate(a.date)
     )
   }, [githubProjects])
 

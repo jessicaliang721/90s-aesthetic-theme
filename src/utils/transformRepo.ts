@@ -35,7 +35,11 @@ export function transformRepo(
         screenshots: { featured: screenshot },
         category: categories[0] ?? 'other',
         featured,
-        date: repo.pushed_at,
+        date: new Date(repo.pushed_at).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+        }),
         href,
         techStack: Object.keys(languages)
     }
