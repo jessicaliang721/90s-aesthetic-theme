@@ -76,7 +76,7 @@ export const projects: Project[] = [
       featured: CAPITAL_ONE_LOGO,
     },
     date: '2018-2019',
-    techStack: ["Python", "Airflow", "AWS S3", "AWS RRedshift"],
+    techStack: ["Python", "Airflow", "AWS S3", "AWS Redshift"],
     highlights: [
       "streamlined the onboarding of new datasets",
       "reduced overall data load times",
@@ -234,7 +234,7 @@ The site was fully responsive and designed to be mobile-friendly, and the projec
       "Used the YouTube API to create a “DTV” page that displayed city video content as a dynamic media feed.",
       "Helped bring a colorful, mobile-friendly city website design to life across multiple page types.",
     ],
-    featured: false,
+    featured: true,
   },
   {
     id: 9,

@@ -29,7 +29,6 @@ export default function Experience() {
   // TODO:
   // update masking tape to cute tapes
 
-
   return (
     <main className="max-w-6xl mx-auto px-6 pb-6">
 
@@ -140,7 +139,7 @@ export default function Experience() {
                     {/* Skills */}
                     {role.skills && role.skills.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-4">
-                        {role.skills.map((skill, i) => (
+                        {role.skills.map((skill) => (
                           <span className="text-sm px-2 py-0.5 rounded-full border border-ink/40 font-mono ml-1">
                             {skill}
                           </span>

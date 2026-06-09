@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import Sticker from './Sticker'
-import MASKING_TAPE from '../assets/doodles-stickers/masking-tape.png'
 import PINK_NOTE_PAPER from '../assets/backgrounds/pink-note-paper.png'
 import YELLOW_NOTE_PAPER from '../assets/backgrounds/yellow-note-paper.png'
 import GREEN_NOTE_PAPER from '../assets/backgrounds/green-note-paper.png'
