@@ -71,3 +71,6 @@ export default defineConfig([
   },
 ])
 ```
+
+Start project locally:
+`npm run dev`

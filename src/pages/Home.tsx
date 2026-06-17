@@ -7,6 +7,9 @@ import Sticker from "../components/Sticker";
 import PINK_WASHI_LONG from '../assets/doodles-stickers/pink-washi-long.png'
 import PURPLE_WASHI from '../assets/doodles-stickers/purple-washi-tape.png'
 import TAMAGOTCHI_STICKER from '../assets/doodles-stickers/tamagotchi.png'
+import HEADPHONES_STICKER from '../assets/doodles-stickers/headphones.png'
+import PHONE_STICKER from '../assets/doodles-stickers/pink-cellphone.png'
+import CASSETTE_STICKER from '../assets/doodles-stickers/purple-mixtape.png'
 
 import { AboutSection } from '../components/AboutSection'
 import { BulletList } from '../components/BulletList'
@@ -41,7 +44,11 @@ export default function Home() {
               Outside of coding, I’m a mama to three tiny humans who keep life wonderfully chaotic. When I manage to sneak in some time alone, I’m usually <span className="squiggle font-semibold text-neon-pink squiggle-pink">reading</span>, <span className="squiggle font-semibold text-retro-lilac squiggle-lilac">journaling</span>, <span className="squiggle font-semibold text-retro-green squiggle-green">crafting</span>, or finding new hobbies to keep my creative juices flowing.
             </p>
           </>
-        } />
+        }
+        topSticker={HEADPHONES_STICKER}
+        middleSticker={PHONE_STICKER}
+        bottomSticker={CASSETTE_STICKER}
+      />
 
       {/* ── Washi divider ─────────────────────────────────── */}
       <img

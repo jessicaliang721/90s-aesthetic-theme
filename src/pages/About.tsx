@@ -4,7 +4,11 @@ import { CTASection } from "../components/CTASection";
 import { SocialIcons } from "../components/SocialIcons";
 import { YTSection } from "../components/YTSection";
 
-import TAMAGOTCHI_STICKER from '../assets/doodles-stickers/tamagotchi.png'
+import BOOMBOX_STICKER from "../assets/doodles-stickers/boombox.png"
+import COMPUTER_STICKER from "../assets/doodles-stickers/computer.png"
+import GAMEBOY_STICKER from "../assets/doodles-stickers/gameboy.png"
+import BUCKET_HAT from '../assets/doodles-stickers/bucket-hat.png'
+
 import Sticker from "../components/Sticker";
 
 export default function About() {
@@ -36,6 +40,9 @@ export default function About() {
             borderColor="#D4B3FF"
           />
         }
+        topSticker={BOOMBOX_STICKER}
+        middleSticker={GAMEBOY_STICKER}
+        bottomSticker={COMPUTER_STICKER}
       />
       {/* ── YouTube Section ─────────────────────────────────── */}
       <YTSection />
@@ -50,7 +57,8 @@ export default function About() {
         }
         title="let's connect!"
         sticker={
-          <Sticker imageSrc={TAMAGOTCHI_STICKER} float={true} customClasses="w-30 md:w-35 lg:w-40" />
+
+          <Sticker imageSrc={BUCKET_HAT} float={true} customClasses="md:w-30 lg:w-40 xl:w-50 rotate-10" />
         }
       />
     </main>

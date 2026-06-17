@@ -11,7 +11,7 @@ interface AboutSectionProps {
     bioText: React.ReactNode
 }
 
-export const AboutSection = ({ bulletList, bioText }: AboutSectionProps) => {
+export const AboutSection = ({ bulletList, bioText, topSticker, middleSticker, bottomSticker }: AboutSectionProps & { topSticker: string; middleSticker: string; bottomSticker: string }) => {
     return (
         <section id="about" className="flex flex-col lg:flex-row gap-8 lg:gap-0 overflow-x-hidden md:overflow-x-visible">
             <div className="flex-1 xl:flex-1 flex justify-center items-center">
@@ -41,7 +41,7 @@ export const AboutSection = ({ bulletList, bioText }: AboutSectionProps) => {
                 <Bio bulletList={bulletList} bioText={bioText} />
             </div>
             <div className="hidden xl:flex-1 xl:inline-flex relative">
-                <StickerSection />
+                <StickerSection topSticker={topSticker} middleSticker={middleSticker} bottomSticker={bottomSticker} />
             </div>
         </section>
     )

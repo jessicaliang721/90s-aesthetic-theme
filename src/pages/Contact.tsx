@@ -1,20 +1,22 @@
+import { getSocial } from '../data/social'
+
 import Sticker from '../components/Sticker'
 import { SocialIcon } from '../components/SocialIcon'
-import { getSocial } from '../data/social'
+import PhotoSection from '../components/PhotoSection'
+import { CTASection } from '../components/CTASection'
+import { SocialIcons } from '../components/SocialIcons'
+import { StickyNote } from '../components/StickyNote'
+import { Button } from '../components/Button'
 
 import PURPLE_WASHI from '../assets/doodles-stickers/purple-washi-tape.png'
 import PURPLE_NOTE_PAPER from '../assets/backgrounds/purple-note-paper.png'
 import GREEN_NOTE_PAPER from '../assets/backgrounds/green-note-paper.png'
-import GREEN_SMILEY from '../assets/doodles-stickers/green-smiley-sticker.png'
 import GREEN_STAR_DOODLE from '../assets/doodles-stickers/green-star-doodle.png'
 import PINK_HEART_DOODLE from '../assets/doodles-stickers/pink-heart-doodle-unfilled.png'
-import PhotoSection from '../components/PhotoSection'
-import { CTASection } from '../components/CTASection'
-import { SocialIcons } from '../components/SocialIcons'
-import DOBBY from '../assets/IMG_7703.jpg'
-import { StickyNote } from '../components/StickyNote'
-import { Button } from '../components/Button'
 import PINK_WASHI_LONG from '../assets/doodles-stickers/pink-washi-long.png'
+import BRACELET from "../assets/doodles-stickers/bracelet.png"
+import DOBBY from '../assets/IMG_7703.jpg'
+
 
 export default function Contact() {
   return (
@@ -52,12 +54,12 @@ export default function Contact() {
 
         {/* Right — polaroid */}
         <div className="flex-1 flex flex-col items-center pt-8 overflow-visible">
-          <PhotoSection 
-          photoUrl={DOBBY} 
-          caption="Dobby says hi!" 
-          rotation={10}
-          sticker1={<Sticker imageSrc={PINK_HEART_DOODLE} customClasses="w-20 absolute top-10 -left-10 -rotate-20" />}
-          sticker2={<Sticker imageSrc={GREEN_STAR_DOODLE} customClasses="w-24 absolute -bottom-12 -right-12" />}
+          <PhotoSection
+            photoUrl={DOBBY}
+            caption="Dobby says hi!"
+            rotation={10}
+            sticker1={<Sticker imageSrc={PINK_HEART_DOODLE} customClasses="w-20 absolute top-10 -left-10 -rotate-20" />}
+            sticker2={<Sticker imageSrc={GREEN_STAR_DOODLE} customClasses="w-24 absolute -bottom-12 -right-12" />}
           />
         </div>
 
@@ -103,7 +105,7 @@ export default function Contact() {
             <StickyNote bgUrl={GREEN_NOTE_PAPER} classNames='p-8 text-xl'>
               <div className='space-y-4'>
                 <h3 className='text-center text-2xl mb-2'>✏️ YouTube Collaborations</h3>
-                <SocialIcon href={getSocial('email')?.href} icon={getSocial('email')?.icon} width={60} height={60} />
+                <SocialIcon icon={getSocial('email')?.icon} width={60} height={60} />
                 <p className="leading-8">
                   If your brand aligns with cozy hobbies featured on my channel - <span className="font-semibold squiggle squiggle-pink">journaling</span>, <span className="font-semibold squiggle squiggle-pink ">stationery</span>, or <span className="font-semibold squiggle squiggle-pink ">crafting</span> - I'd love to hear from you. Send me an email and let's create something wonderful together.
                 </p>
@@ -135,7 +137,7 @@ export default function Contact() {
         }
         title="let's connect!"
         sticker={
-          <Sticker imageSrc={GREEN_SMILEY} float={true} customClasses="w-30 md:w-35 lg:w-40" />
+          <Sticker imageSrc={BRACELET} float={true} customClasses="rotate-10 md:w-30 lg:w-40 xl:w-50" />
         }
       />
     </main>
