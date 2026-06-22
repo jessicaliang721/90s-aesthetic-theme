@@ -1,12 +1,12 @@
 import { GITHUB_USERNAME } from '../constants/github'
 import type { GitHubRepo } from '../types/github'
 import type { Project } from '../types/project'
+import type { PortfolioJSON } from '../types/portfolio'
 
 export function transformRepo(
     repo: GitHubRepo,
     languages: Record<string, number>,
-    longDescription: string | null,
-    highlights: string[] | null
+    json?: PortfolioJSON | null,
 ): Project {
     const topics = repo.topics ?? []
 
@@ -22,7 +22,11 @@ export function transformRepo(
         ? `https://${GITHUB_USERNAME}.github.io/${repo.name}`
         : undefined
 
-    const screenshot = repo.social_preview_url || `https://opengraph.githubassets.com/1/${GITHUB_USERNAME}/${repo.name}`
+    const longDescription = json?.longDescription
+
+    const highlights = json?.highlights
+
+    const screenshots = json?.screenshots ?? {}
 
     return {
         id: repo.id,
@@ -32,7 +36,7 @@ export function transformRepo(
         longDescription: longDescription ?? undefined,
         highlights: highlights ?? undefined,
         githubHref: repo.html_url,
-        screenshots: { featured: screenshot },
+        screenshots: screenshots,
         category: categories[0] ?? 'other',
         featured,
         date: new Date(repo.pushed_at).toLocaleDateString('en-US', {

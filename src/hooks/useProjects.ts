@@ -33,7 +33,7 @@ export function useProjects() {
             fetchPortfolioJSON(repo.name)
           ])
 
-          return transformRepo(repo, languages, json?.longDescription, json?.highlights)
+          return transformRepo(repo, languages, json)
         })
       )
 
