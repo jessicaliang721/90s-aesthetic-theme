@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/pink-heart-doodle.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jessica Liang | Front End Developer</title>
+  <script type="module" crossorigin src="/assets/index-YC8llGCb.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Bo-2PNA3.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const redirect = sessionStorage.getItem('redirect');
+    if (redirect) {
+      sessionStorage.removeItem('redirect');
+      window.history.replaceState(null, '', redirect);
+    }
+  </script>
+</body>
+
+</html>
